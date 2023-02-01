@@ -1,0 +1,8 @@
+# playwright default
+node_modules/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# macOS ignores
+.DS_Store
