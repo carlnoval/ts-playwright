@@ -19,7 +19,22 @@ jobs:
         node-version: 16
     - name: Install dependencies
       run: npm ci
+    # Obtain existing playwright version
+    - name: Store Playwright's Version
+      run: |
+        PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
+        echo "Playwright's Version: $PLAYWRIGHT_VERSION"
+        echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
+    # Cache browsers using Playwright version as key
+    - name: Cache Playwright Browsers for Playwright's Version
+      id: cache-playwright-browsers
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
+    # Install Playwirght Browsers if existing version don't match
     - name: Install Playwright Browsers
+      if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
       run: npx playwright install --with-deps
     - name: Run Playwright tests
     # xvfb-run allows headful browser testing
