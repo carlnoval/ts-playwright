@@ -7,6 +7,7 @@ on:
 # permission for publishing on github pages
 permissions:
   id-token: write
+  pages: write
 jobs:
   test:
     timeout-minutes: 60
