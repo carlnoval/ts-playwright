@@ -1,15 +1,17 @@
-name: Playwright Tests
+name: Run Playwright EtoE
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
 # permission for publishing on github pages
 permissions:
   id-token: write
   pages: write
+
 jobs:
-  test:
+  run-playwright-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -19,12 +21,14 @@ jobs:
         node-version: 16
     - name: Install dependencies
       run: npm ci
+
     # Obtain existing playwright version
     - name: Store Playwright's Version
       run: |
         PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
         echo "Playwright's Version: $PLAYWRIGHT_VERSION"
         echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
+
     # Cache browsers using Playwright version as key
     - name: Cache Playwright Browsers for Playwright's Version
       id: cache-playwright-browsers
@@ -32,11 +36,13 @@ jobs:
       with:
         path: ~/.cache/ms-playwright
         key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
+
     # Install Playwirght Browsers if existing version don't match
     - name: Install Playwright Browsers
       if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
       run: npx playwright install --with-deps
     - name: Run Playwright tests
+
     # xvfb-run allows headful browser testing
       run: xvfb-run npx playwright test
     - uses: actions/upload-artifact@v3
@@ -45,6 +51,7 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+
     # Publish to github pages
     - name: Setup Pages
       uses: actions/configure-pages@v2
@@ -56,3 +63,6 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v1
+
+    - name: GitHub Pages link
+      run: echo "https://carlnoval.github.io/ts-playwright"
