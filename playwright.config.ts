@@ -39,7 +39,10 @@ const config: PlaywrightTestConfig = {
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    // trace: 'on-first-retry',
+
+    headless: false,
+    trace: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */
@@ -58,12 +61,13 @@ const config: PlaywrightTestConfig = {
       },
     },
 
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-      },
-    },
+    // Disabling webkit for now due to https://github.com/microsoft/playwright/issues/20576
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {
