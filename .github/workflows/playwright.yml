@@ -18,6 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
+    # xvfb-run allows headful browser testing
       run: xvfb-run npx playwright test
     - uses: actions/upload-artifact@v3
       if: always()
