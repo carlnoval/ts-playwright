@@ -62,12 +62,12 @@ const config: PlaywrightTestConfig = {
     },
 
     // Disabling webkit for now due to https://github.com/microsoft/playwright/issues/20576
-    // {
-    //   name: 'webkit',
-    //   use: {
-    //     ...devices['Desktop Safari'],
-    //   },
-    // },
+    {
+      name: 'webkit',
+      use: {
+        ...devices['Desktop Safari'],
+      },
+    },
 
     /* Test against mobile viewports. */
     // {
