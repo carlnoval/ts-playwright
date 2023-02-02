@@ -4,6 +4,9 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+# permission for publishing on github pages
+permissions:
+  id-token: write
 jobs:
   test:
     timeout-minutes: 60
