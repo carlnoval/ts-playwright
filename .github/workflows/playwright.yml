@@ -1,3 +1,4 @@
+# Dependency caching is not recommended
 name: Run Playwright EtoE
 on:
   workflow_dispatch:
@@ -43,9 +44,9 @@ jobs:
       run: npx playwright install --with-deps
       if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
 
-    # Some browser project (WebKit) may fail from running without this installation
-    - name: Only install dependencies to run the browsers
-      run: npx playwright install-deps
+    # Webkit fails w/ot installing its dependency, chromium and firfox don't seem to have any other dependency
+    - name: Install WebKit dependency
+      run: npx playwright install-deps webkit
       if: steps.cache-playwright-browsers.outputs.cache-hit == 'true'
 
     - name: Run Playwright tests
