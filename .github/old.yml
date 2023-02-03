@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    # Obtain project's playwright version
+    # Obtain existing playwright version
     - name: Store Playwright's Version
       run: |
         PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
@@ -35,7 +35,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/.cache/ms-playwright
-        key: playwright-browser-for-OS:${{ runner.os }}-PlaywrightVersion:${{ env.PLAYWRIGHT_VERSION }}
+        key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
 
     # Install Playwirght Browsers if existing version don't match
     - name: Install Playwright Browsers
