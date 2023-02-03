@@ -40,11 +40,16 @@ jobs:
 
     # Install Playwirght Browsers if existing version don't match
     - name: Install Playwright Browsers
-      if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
+      if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
 
-    # xvfb-run allows headful browser testing
+    # Some browser project (WebKit) may fail from running without this installation
+    - name: Only install dependencies to run the browsers
+      run: npx playwright install-deps
+      if: steps.cache-playwright-browsers.outputs.cache-hit == 'true'
+
+    - name: Run Playwright tests
+      # xvfb-run allows headful browser testing
       run: xvfb-run npx playwright test
     - uses: actions/upload-artifact@v3
       if: always()
