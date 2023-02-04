@@ -27,8 +27,8 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 0 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? '80%' : '100%',
+  /* percentage of logical CPU cores */
+  workers: process.env.CI ? '600%' : '120%',
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
