@@ -52,7 +52,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
-        # Path of wher the reports are saved
+        # Path of where the reports are saved
         path: playwright-report
     - name: Deploy to GitHub Pages
       id: deployment
