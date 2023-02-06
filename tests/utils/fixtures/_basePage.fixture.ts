@@ -5,10 +5,9 @@ export const testX = test.extend<{ _basePage: BasePage }>({
   _basePage: [async ({ page }, use) => {
     // Set up the fixture.
     await page.goto('');
-    const todoPage = new BasePage(page);
 
     // Use the fixture value in the test.
-    await use(todoPage);
+    await use(new BasePage(page));
 
     // Code for fixture cleanup, none needed for now since pages are auto closed by Playwright
 
