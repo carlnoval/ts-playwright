@@ -13,6 +13,11 @@ export class BasePage {
     return new LoginPage(this.page);
   }
 
+  async clickKeyPressesPage() {
+    await this.clickLink("Key Presses");
+    return new LoginPage(this.page);
+  }
+
   private async clickLink(linkText: string) {
     await this.page.getByRole('link', { name: linkText }).click()
   }
