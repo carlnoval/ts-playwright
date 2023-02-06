@@ -1,14 +1,11 @@
 import { expect, testX } from '../utils/fixtures/_basePage.fixture';
 
 testX('navigate to login page', async ({ _basePage }) => {
-  // From: console.log(JSON.stringify(await securePage.getBannerMessage()))
-  const RAWBANNERMESSAGE = "\n            You logged into a secure area!\n            ×\n          ";
-  const USERNMAE = "tomsmith";
-  const PASSWORD = "SuperSecretPassword!";
+  const keyPressesPage = await _basePage.clickKeyPressesPage();
 
-  const loginPage = await _basePage.clickFormAuthentication();                  // Navigate to form auth page
-  await loginPage.enterLogin(USERNMAE, PASSWORD);                               // Provide credentials
-  const securePage = await loginPage.clickLoginButton();                        // Proceed to login
+  await keyPressesPage.typeKeys('pi=3.14');
+  expect(await keyPressesPage.getResultMessage()).toBe("You entered: 4");
 
-  expect(await securePage.getWelcomeBannerMessage()).toEqual(RAWBANNERMESSAGE)  // Verify that the right success 
+  await keyPressesPage.pressSpecialKey('Delete');
+  expect(await keyPressesPage.getResultMessage()).toBe("You entered: DELETE");
 });
