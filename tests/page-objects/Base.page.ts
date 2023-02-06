@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { FormAuthPage } from "./form-auth-page";
+import { LoginPage } from "./Login.page";
 
 export class BasePage {
   readonly page: Page;
@@ -10,8 +10,8 @@ export class BasePage {
 
   async clickFormAuthentication() {
     await this.clickLink("Form Authentication");
-    return new FormAuthPage(this.page);
-  } 
+    return new LoginPage(this.page);
+  }
 
   private async clickLink(linkText: string) {
     await this.page.getByRole('link', { name: linkText }).click()
