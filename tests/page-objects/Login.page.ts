@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test";
 
-export class FormAuthPage {
+export class LoginPage {
   readonly page: Page;
 
   constructor(page: Page) {
