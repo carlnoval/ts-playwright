@@ -1,4 +1,4 @@
-import { testX, expect } from '../../utils/fixtures/_basePage.fixture'
+import { expect, testX } from '../../utils/fixtures/_basePage.fixture';
 
 // _basePage fixture is set to auto execute
 testX('has title', async ({ page }) => {
