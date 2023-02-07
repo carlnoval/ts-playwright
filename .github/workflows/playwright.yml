@@ -17,7 +17,8 @@ permissions:
 jobs:
   run-playwright-tests:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    # version must always match with docker image: https://hub.docker.com/_/microsoft-playwright
+    runs-on: ubuntu-20.04
 
     steps:
 
