@@ -9,6 +9,5 @@ testX('login - valid credentials', async ({ _basePage }) => {
   const loginPage = await _basePage.clickFormAuthentication();                  // Navigate to form auth page
   await loginPage.enterLogin(USERNMAE, PASSWORD);                               // Provide credentials
   const securePage = await loginPage.clickLoginButton();                        // Proceed to login
-
   expect(await securePage.getWelcomeBannerMessage()).toEqual(RAWBANNERMESSAGE)  // Verify that the right success 
 });
