@@ -12,16 +12,10 @@ export class KeyPressesPage {
   }
 
   async typeKeys(str: string) {
-    this.clearTextField();
     await this.textField.type(str);
   }
   
   async pressSpecialKey(specialKey: string) {
-    this.clearTextField();
     await this.textField.press(specialKey);
-  }
-
-  private async clearTextField() {
-    await this.textField.fill("");
   }
 }
