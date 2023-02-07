@@ -1,0 +1,12 @@
+# docker compose version
+version: "3.8"
+# docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.30.0-focal /bin/bash 
+services:
+
+  playwright-container-service:
+    image: mcr.microsoft.com/playwright:v1.30.0-focal
+    tty: true
+    container_name: playwright-dckr-cntnr
+    stdin_open: true
+    volumes: 
+      - $PWD:/playwright/
