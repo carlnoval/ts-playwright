@@ -21,10 +21,6 @@ export class KeyPressesPage {
     await this.textField.press(specialKey);
   }
 
-  async getResultMessage() {
-    return await this.resultMessageDisplay.textContent();
-  }
-
   private async clearTextField() {
     await this.textField.fill("");
   }
