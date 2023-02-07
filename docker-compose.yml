@@ -13,6 +13,6 @@ services:
     image: mcr.microsoft.com/playwright:v1.30.0-focal
     tty: true                 # --it and /bin/bash equivalent
     network_mode: host        # --network host
-    volumes:
+    volumes:                  # Ensures that updates in local/container are in sync
       - $PWD:/playwright/     # -v $(pwd):/volumedir/
     working_dir: /playwright  # -w /volumedir/
