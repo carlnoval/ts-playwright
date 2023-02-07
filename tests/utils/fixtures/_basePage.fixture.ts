@@ -11,7 +11,7 @@ export const testX = test.extend<{ _basePage: BasePage }>({
 
     // Code for fixture cleanup, none needed for now since pages are auto closed by Playwright
 
-    // `auto: true` allows automatic usage of this fixture if testY is used
+    // `auto: true` allows automatic usage of this fixture if testX is used
   }, { auto: true }]
 });
 
