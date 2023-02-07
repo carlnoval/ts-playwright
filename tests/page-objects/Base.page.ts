@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { LoginPage } from "./Form Authentication/Login.page";
+import { LoginPage } from "./Form Authentication Pages/Login.page";
 import { KeyPressesPage } from "./KeyPresses.page";
 
 export class BasePage {
