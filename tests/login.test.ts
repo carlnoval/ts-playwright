@@ -6,7 +6,7 @@ testX('login - valid credentials', async ({ _basePage }) => {
   const USERNMAE = "tomsmith";
   const PASSWORD = "SuperSecretPassword!";
 
-  const loginPage = await _basePage.clickFormAuthentication();                // Navigate to form auth page
+  const loginPage = await _basePage.clickFormAuthenticationLink();                // Navigate to form auth page
   await loginPage.enterLogin(USERNMAE, PASSWORD);                             // Provide credentials
   const securePage = await loginPage.clickLoginButton();                      // Proceed to login
   await expect(securePage.loginBannerMessage).toHaveText(RAWBANNERMESSAGE)    // Verify that the right success 

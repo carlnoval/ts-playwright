@@ -9,7 +9,7 @@ testX('has title', async ({ page }) => {
 // tough _basePage fixture is set to auto execute, still need to explicitly call it to access its method
 testX('navigate to login page', async ({ _basePage, page }) => {
   // Click the get started link.
-  await _basePage.clickFormAuthentication();
+  await _basePage.clickFormAuthenticationLink();
 
   // Expects the URL to contain '/login/'.
   await expect(page).toHaveURL(/\/login/);
