@@ -8,8 +8,4 @@ export class SecurePage {
     this.page  = page;
     this.loginBannerMessage = page.getByText('You logged into a secure area! ×')
   }
-
-  async getWelcomeBannerMessage() {
-    return await this.loginBannerMessage.textContent();
-  }
 }
