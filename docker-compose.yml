@@ -3,6 +3,7 @@
 # The command is translated to this docker compose for convenience
 
 # Spin up container with:   docker compose up -d
+# Use container terminal: in IDE via 'docker exec -it pw-cont /bin/bash' or through docker desktop
 # Take down container with: docker compose down
 
 version: "3.8"                # docker compose version
