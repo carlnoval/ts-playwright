@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test";
-import { KeyPresses } from "./KeyPresses.page";
-import { LoginPage } from "./Login.page";
+import { LoginPage } from "./Form Authentication/Login.page";
+import { KeyPressesPage } from "./KeyPresses.page";
 
 export class BasePage {
   readonly page: Page;
@@ -16,7 +16,7 @@ export class BasePage {
 
   async clickKeyPressesPage() {
     await this.clickLink("Key Presses");
-    return new KeyPresses(this.page);
+    return new KeyPressesPage(this.page);
   }
 
   private async clickLink(linkText: string) {

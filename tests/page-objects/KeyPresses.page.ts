@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 
-export class KeyPresses {
+export class KeyPressesPage {
   readonly page: Page;
   readonly textField: Locator;
   readonly resultMessageDisplay: Locator;
