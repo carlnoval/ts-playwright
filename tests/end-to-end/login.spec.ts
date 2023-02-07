@@ -1,6 +1,6 @@
 import { expect, testX } from '../utils/fixtures/_basePage.fixture';
 
-testX('navigate to login page', async ({ _basePage }) => {
+testX('login - valid credentials', async ({ _basePage }) => {
   // From: console.log(JSON.stringify(await securePage.getBannerMessage()))
   const RAWBANNERMESSAGE = "\n            You logged into a secure area!\n            ×\n          ";
   const USERNMAE = "tomsmith";
