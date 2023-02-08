@@ -41,27 +41,27 @@ jobs:
     - name: Run Playwright tests
       run: xvfb-run npx playwright test
     - uses: actions/upload-artifact@v3
-      if: always()
+      if: success() || failure()
       with:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
 
-    - name: Check report dir
-      run: ls playwright-report
-      if: always()
-
     # Publish to github pages
     - name: Setup Pages
       uses: actions/configure-pages@v2
+      if: success() || failure()
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
+      if: success() || failure()
       with:
         # Path of where the reports are saved
         path: playwright-report
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v1
+      if: success() || failure()
 
     - name: GitHub Pages link
       run: echo "https://carlnoval.github.io/ts-playwright"
+      if: success() || failure()
