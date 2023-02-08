@@ -30,7 +30,7 @@ const config: PlaywrightTestConfig = {
   /* Retry on CI only */
   retries: process.env.CI ? 0 : 0,
   /* percentage of logical CPU cores, current mac core: 8 */
-  workers: process.env.CI ? '200%' : '200%',
+  workers: process.env.CI ? '400%' : '200%',
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI || process.platform == 'darwin' ? 'html' : 'dot',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
