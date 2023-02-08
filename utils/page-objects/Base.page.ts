@@ -2,6 +2,7 @@ import { Locator, Page } from "@playwright/test";
 import { BrokenImagesPage } from "./BrokenImages.page";
 import { LoginPage } from "./Form Authentication Pages/Login.page";
 import { KeyPressesPage } from "./KeyPresses.page";
+import { ShiftingContentIndexPage } from "./Shifting Content Pages/ShiftingContentIndex.page";
 
 export class BasePage {
   readonly page: Page;
@@ -25,6 +26,11 @@ export class BasePage {
   async clickBrokenImagesLink() {
     await this.clickLink("Broken Images");
     return new BrokenImagesPage(this.page);
+  }
+
+  async clickShiftingContextIndexLink() {
+    await this.clickLink("Shifting Content");
+    return new ShiftingContentIndexPage(this.page);
   }
 
   private async clickLink(linkText: string) {
