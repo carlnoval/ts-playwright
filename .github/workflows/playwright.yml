@@ -47,6 +47,10 @@ jobs:
         path: playwright-report/
         retention-days: 30
 
+    - name: Check report dir
+      run: ls playwright-report
+      if: always()
+
     # Publish to github pages
     - name: Setup Pages
       uses: actions/configure-pages@v2
