@@ -1,13 +1,15 @@
-import { Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 import { BrokenImagesPage } from "./BrokenImages.page";
 import { LoginPage } from "./Form Authentication Pages/Login.page";
 import { KeyPressesPage } from "./KeyPresses.page";
 
 export class BasePage {
   readonly page: Page;
+  readonly pageHeader: Locator;
 
   constructor(page: Page) {
     this.page  = page;
+    this.pageHeader = page.getByRole('heading', { name: 'Welcome to the-internet' });
   }
 
   async clickFormAuthenticationLink() {
