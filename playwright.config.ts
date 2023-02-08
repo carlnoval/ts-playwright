@@ -13,6 +13,7 @@ import { devices } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   testDir: './tests',
   testMatch: /.*\.test\.ts/,
+  snapshotPathTemplate: 'test-screenshots/{testFilePath}/{projectName}-{arg}{ext}',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -31,7 +32,7 @@ const config: PlaywrightTestConfig = {
   /* percentage of logical CPU cores, current mac core: 8 */
   workers: process.env.CI ? '600%' : '200%',
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: process.platform == 'linux' ? 'dot' : 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
