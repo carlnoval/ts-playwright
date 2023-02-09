@@ -1,5 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { BrokenImagesPage } from "./BrokenImages.page";
+import { ChallengingDOMPage } from "./ChallengingDOM.page";
 import { LoginPage } from "./Form Authentication Pages/Login.page";
 import { KeyPressesPage } from "./KeyPresses.page";
 import { ShiftingContentIndexPage } from "./Shifting Content Pages/ShiftingContentIndex.page";
@@ -31,6 +32,11 @@ export class BasePage {
   async clickShiftingContextIndexLink() {
     await this.clickLink("Shifting Content");
     return new ShiftingContentIndexPage(this.page);
+  }
+
+  async clickChallengingDOMLink() {
+    await this.clickLink("Challenging DOM");
+    return new ChallengingDOMPage(this.page);
   }
 
   private async clickLink(linkText: string) {
