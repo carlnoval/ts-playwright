@@ -6,3 +6,7 @@ node_modules/
 
 # macOS ignores
 .DS_Store
+
+# Allure Reporting
+/allure-report
+/my-allure-results
