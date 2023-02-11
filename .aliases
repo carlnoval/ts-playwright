@@ -1,0 +1,9 @@
+# Utilizing these aliases makes it easier to run docker commands
+# Precondition: Playwright docker container must be up and running
+
+# Extra Notes:
+# - pw-cont: is the default given name to the playwright docker container
+# - xvfb-run is needed to run headed browsers in linux
+
+# Basic command equivalent to 'npx playwright ...'
+alias dnp='docker exec pw-cont xvfb-run npx playwright'
