@@ -17,4 +17,5 @@
     - Node version...
     - etc...
 2. Clone the repo
-3. WIP
+3. Local test runs must be done through docker container, playwright docker container should be running, use aliases to run commands easier
+x. WIP
