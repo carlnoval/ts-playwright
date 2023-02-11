@@ -32,7 +32,19 @@ const config: PlaywrightTestConfig = {
   /* percentage of logical CPU cores, current mac core: 8 */
   workers: process.env.CI ? '200%' : '200%',
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: process.env.CI || process.platform == 'darwin' ? 'html' : 'dot',
+  /* For Allure, See https://www.npmjs.com/package/allure-playwright */
+  reporter: [
+    // use allure-reports on both local mac and CI
+    ['allure-playwright',
+      {
+        detail: true,
+        outputFolder: "my-allure-results",
+        suiteTitle: false,
+      }
+    ],
+    // use html on local mac and CI, use dot on docker
+    [process.env.CI || process.platform === 'darwin' ? 'html' : 'dot']
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
