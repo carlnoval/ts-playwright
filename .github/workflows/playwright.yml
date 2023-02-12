@@ -47,20 +47,50 @@ jobs:
         path: playwright-report/
         retention-days: 30
 
-    # Publish to github pages
-    - name: Setup Pages
-      uses: actions/configure-pages@v2
-      if: success() || failure()
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+    - name: Get Allure history
+      uses: actions/checkout@v3
       if: success() || failure()
       with:
-        # Path of where the reports are saved
-        path: playwright-report
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v1
+        # The repo branch to checkout
+        ref: allure-reports-history
+        # Relative path under $GITHUB_WORKSPACE to place the repository branch that was checked out
+        # $GITHUB_WORKSPACE is the default working directory on the runner for steps: /home/runner/work/gh-actions/gh-actions
+        path: allure-reports-history
+
+    - name: Generate Allure Report
+      uses: simple-elf/allure-report-action@master
       if: success() || failure()
+      id: allure-report
+      with:
+        allure_results: allure-results
+        gh_pages: allure-reports-history
+        allure_report: allure-report
+        allure_history: allure-history
+        keep_reports: 20
+
+    - name: Deploy report to Github Pages
+      if: success() || failure()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: allure-reports-history
+        publish_dir: allure-history
+
+    # Playwright HTML report upload to github pages
+    # # Publish to github pages
+    # - name: Setup Pages
+    #   uses: actions/configure-pages@v2
+    #   if: success() || failure()
+    # - name: Upload artifact
+    #   uses: actions/upload-pages-artifact@v1
+    #   if: success() || failure()
+    #   with:
+    #     # Path of where the reports are saved
+    #     path: playwright-report
+    # - name: Deploy to GitHub Pages
+    #   id: deployment
+    #   uses: actions/deploy-pages@v1
+    #   if: success() || failure()
 
     - name: GitHub Pages link
       run: echo "https://carlnoval.github.io/ts-playwright"
