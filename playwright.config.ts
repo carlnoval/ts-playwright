@@ -38,12 +38,6 @@ const config: PlaywrightTestConfig = {
     ['html', { open: 'never', outputFolder: 'playwright-report' }],
     ['allure-playwright', { detail: true, outputFolder: "my-allure-results", suiteTitle: false }]
   ],
-  // reporter: [
-  //   // use html on local mac and CI, use dot on docker
-  //   [process.env.CI || process.platform === 'darwin' ? 'html' : 'dot'],
-  //   // use allure-reports on both local mac and CI
-  //   ['allure-playwright', { detail: true, outputFolder: "my-allure-results", suiteTitle: false }]
-  // ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
