@@ -36,7 +36,7 @@ const config: PlaywrightTestConfig = {
   reporter: [
     ['dot'],
     ['html', { open: 'never', outputFolder: 'playwright-report' }],
-    ['allure-playwright', { detail: true, outputFolder: "my-allure-results", suiteTitle: false }]
+    ['allure-playwright', { detail: true, outputFolder: "allure-test-results", suiteTitle: false  }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
