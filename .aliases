@@ -12,4 +12,4 @@ code /Users/carl/.aliases
 alias dnp='docker exec pw-cont xvfb-run npx playwright'
 
 # my-allure-results is the directory that was setup to store allure reports
-alias allureserve='allure generate my-allure-results -o allure-report --clean && allure open allure-report'
+alias allureserve='allure generate allure-test-results -o allure-report --clean && allure open allure-report'
