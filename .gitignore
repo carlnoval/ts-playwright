@@ -9,4 +9,4 @@ node_modules/
 
 # Allure Reporting
 /allure-report
-/my-allure-results
+/allure-test-results
