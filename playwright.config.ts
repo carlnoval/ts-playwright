@@ -21,7 +21,7 @@ const config: PlaywrightTestConfig = {
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 5000
+    timeout: 2000
   },
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -35,8 +35,9 @@ const config: PlaywrightTestConfig = {
   /* For Allure, See https://www.npmjs.com/package/allure-playwright */
   reporter: [
     ['dot'],
-    ['html', { open: 'never', outputFolder: 'playwright-report' }],
-    ['allure-playwright', { detail: true, outputFolder: "allure-test-results", suiteTitle: false  }]
+    ['allure-playwright', { detail: true, outputFolder: "allure-test-results", suiteTitle: true  }],
+    // enable 'html' report if needed
+    // ['html', { open: 'never', outputFolder: 'playwright-report' }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
