@@ -1,5 +1,5 @@
 # Playwright End to End Automation Project
-## Structure
+## Project Structure
 - Uses Page Object Models and Fixtures, all found under `utils` directory
 ## Tests
 - Passing/Failing/Skipped Tests
@@ -9,9 +9,12 @@
     - Element
     - Page
   - API Response (WIP)
+    - Need a way to pass keys and secrets to GHA
+  - Component Testing (WIP)
 ## Reporting
-- Playwright HTML report that Deploys to GitHub pages
-- Allure (WIP)
+- T following reports are enabled for this project
+  - Dot reports for quick logs
+  - Allure reports with history for sharing via GitHub pages
 ## Run the test
 1. Preconditions to install
     - Node version...
