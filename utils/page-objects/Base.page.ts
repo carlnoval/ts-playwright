@@ -3,6 +3,7 @@ import { BrokenImagesPage } from "./BrokenImages.page";
 import { ChallengingDOMPage } from "./ChallengingDOM.page";
 import { LoginPage } from "./Form Authentication Pages/Login.page";
 import { KeyPressesPage } from "./KeyPresses.page";
+import { LargeDeepDOM } from "./LargeDeepDOM.page";
 import { ShiftingContentIndexPage } from "./Shifting Content Pages/ShiftingContentIndex.page";
 
 export class BasePage {
@@ -37,6 +38,11 @@ export class BasePage {
   async clickChallengingDOMLink() {
     await this.clickLink("Challenging DOM");
     return new ChallengingDOMPage(this.page);
+  }
+
+  async clickLargeDeepDOMLink() {
+    await this.clickLink("Large & Deep DOM");
+    return new LargeDeepDOM(this.page);
   }
 
   private async clickLink(linkText: string) {
