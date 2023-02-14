@@ -37,6 +37,8 @@ jobs:
     # Install Playwirght Browsers
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+      env:
+        DUMMY_TOKEN: ${{ secrets.DUMMY_TOKEN_GH_SECRET }}
 
     # xvfb-run allows headful browser testing
     - name: Run Playwright tests
