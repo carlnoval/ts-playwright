@@ -51,6 +51,15 @@ const config: PlaywrightTestConfig = {
 
     headless: false,
     trace: 'retain-on-failure',
+
+    /**
+     * Advantage: Full page screenshot on general failed tests.
+     * Disacvantage: Takes another unecessary screenshot for visual assertions, visual assertions already have expected vs actual screenshots. 
+     */
+    screenshot: {
+      mode: 'only-on-failure',
+      fullPage: true,
+    }
   },
 
   /* Configure projects for major browsers */
