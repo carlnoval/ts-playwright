@@ -1,4 +1,6 @@
-# Open .aliases file
+<!-- Commenting out everything for now, decided to use scrips from package.json. -->
+<!-- Thought all commented out, still keeping this file just in case. -->
+<!-- # Open .aliases file
 code /Users/carl/.aliases
 
 # Utilizing these aliases makes it easier to run docker commands
@@ -12,4 +14,4 @@ code /Users/carl/.aliases
 alias dnp='docker exec pw-cont xvfb-run npx playwright'
 
 # my-allure-results is the directory that was setup to store allure reports
-alias allureserve='allure generate allure-test-results -o allure-report --clean && allure open allure-report'
+alias allureserve='allure generate allure-test-results -o allure-report --clean && allure open allure-report' -->
