@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       DUMMY_TOKEN: ${{ secrets.DUMMY_TOKEN_GH_SECRET }}
+      TMDB_API_V3_KEY: ${{ secrets.TMDB_API_V3_KEY_GH_SECRET }}
       SECRET_NUM: ${{ vars.SECRET_NUM_GH_VAR }}
 
     steps:
