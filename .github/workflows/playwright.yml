@@ -43,6 +43,7 @@ jobs:
       run: xvfb-run npx playwright test
       env:
         DUMMY_TOKEN: ${{ secrets.DUMMY_TOKEN_GH_SECRET }}
+        SECRET_NUM: ${{ secrets.SECRET_NUM_GH_VAR }}
 
     # Playwright report artifact, uncomment if needed
     # - name: Upload Playwright artifacts
