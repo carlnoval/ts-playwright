@@ -1,11 +1,19 @@
 {
   "name": "ts-playwright",
   "version": "1.0.0",
-  "description": "",
+  "description": "Playwright Tests",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "_comment1": "All scripts can be ran via `npm run script_name`.",
+    "_comment2": "The `docker exec` comand is required to run commands to the active playwright docker container.",
+    "_comment3": "The default given name for the playwright docker container is `pw-cont`.",
+    "_comment4": "The `xvfb-run` command is required to run headed browsers in a linux container.",
+
+    "dcpw": "docker exec pw-cont xvfb-run npx playwright",
+    "allureserve": "allure generate allure-test-results -o allure-report --clean && allure open allure-report"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Carl N",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.30.0",
