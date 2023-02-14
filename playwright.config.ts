@@ -1,20 +1,11 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
-import * as dotenv from 'dotenv';
-
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
 require('dotenv').config();
-dotenv.config();
-process.env.S3_BUCKET // This is still not being resolved properly
-
-// dotenv.config({ path: path.resolve(__dirname, ".env") });
-// require('dotenv').config({ path:__dirname + '.env' })
-// require('dotenv').config({  path: path.resolve(__dirname + '.env') , debug: true});
-// dotenv.config({ path: path.resolve(__dirname, './.env') });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
