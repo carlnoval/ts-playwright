@@ -1,5 +1,5 @@
 # sensitive information
-*.env
+.env
 
 # playwright default
 node_modules/
