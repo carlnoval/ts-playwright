@@ -20,6 +20,9 @@ jobs:
     timeout-minutes: 60
     # version must always match with docker image: https://hub.docker.com/_/microsoft-playwright
     runs-on: ubuntu-20.04
+    env:
+      DUMMY_TOKEN: ${{ secrets.DUMMY_TOKEN_GH_SECRET }}
+      SECRET_NUM: ${{ secrets.SECRET_NUM_GH_VAR }}
 
     steps:
 
@@ -40,9 +43,6 @@ jobs:
 
     # xvfb-run allows headful browser testing
     - name: Run Playwright tests
-      env:
-        DUMMY_TOKEN: ${{ secrets.DUMMY_TOKEN_GH_SECRET }}
-        SECRET_NUM: ${{ secrets.SECRET_NUM_GH_VAR }}
       run: xvfb-run npx playwright test
 
     # Playwright report artifact, uncomment if needed
