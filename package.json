@@ -8,9 +8,9 @@
     "_comment2": "The `docker exec` comand is required to run commands to the active playwright docker container.",
     "_comment3": "The default given name for the playwright docker container is `pw-cont`.",
     "_comment4": "The `xvfb-run` command is required to run headed browsers in a linux container.",
+    "_comment5": "-g is for grep, can only take one argument",
 
     "dcpw": "docker exec pw-cont xvfb-run npx playwright",
-    "_comment5": "Above script does not work with description specific tests",
     "description": "docker exec pw-cont xvfb-run npx playwright test -g",
     "allureserve": "allure generate allure-test-results -o allure-report --clean && allure open allure-report"
   },
