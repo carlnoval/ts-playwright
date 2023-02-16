@@ -8,8 +8,8 @@ import { expect, testY } from '../utils/fixtures/_tmdb.fixture';
  */
 testY.describe('API Tests', () => {
   testY('fetch valid movie ', async ({ request, _tmdbV3API, _tmdbV3APIKey }) => {
-    const validID = '315162'
-    const requestURL = `${_tmdbV3API}movie/${validID}?api_key=${_tmdbV3APIKey}` ;
+    const validID = '315162';
+    const requestURL = `${_tmdbV3API}movie/${validID}?api_key=${_tmdbV3APIKey}`;
     const movie = await request.get(requestURL);
     expect(movie.ok()).toBeTruthy();
     // The 'await movie.json()' needs to be inside an array '[]' because 'toContainEqual' expects an array
@@ -25,8 +25,8 @@ testY.describe('API Tests', () => {
   
   // Invlid movie id api response is: { success: false, status_code: 34, status_message: 'The resource you requested could not be found.' }
   testY('invalid movie id - array & toContainEqual', async ({ request, _tmdbV3API, _tmdbV3APIKey }) => {
-    const invalidID = '9999999999'
-    const requestURL = `${_tmdbV3API}movie/${invalidID}?api_key=${_tmdbV3APIKey}` ;
+    const invalidID = '9999999999';
+    const requestURL = `${_tmdbV3API}movie/${invalidID}?api_key=${_tmdbV3APIKey}`;
     const movie = await request.get(requestURL);
     expect(movie.status()).toBe(404);
     // The 'await movie.json()' needs to be inside an array '[]' because 'toContainEqual' expects an array
@@ -37,12 +37,12 @@ testY.describe('API Tests', () => {
       status_code: 34,
       status_message: "The resource you requested could not be found."
     }));
-    // Also passes if 'objectContaining' is empty
-    expect([await movie.json()]).toContainEqual(expect.objectContaining({
-    }));
     // Also passes if 'objectContaining' contains key-value pairs that are matching
     expect([await movie.json()]).toContainEqual(expect.objectContaining({
       status_message: "The resource you requested could not be found."
+    }));
+    // Also passes if 'objectContaining' is empty
+    expect([await movie.json()]).toContainEqual(expect.objectContaining({
     }));
   });
 
