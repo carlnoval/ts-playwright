@@ -10,8 +10,8 @@
     "_comment4": "The `xvfb-run` command is required to run headed browsers in a linux container.",
     "_comment5": "-g is for grep, can only take one argument",
 
-    "dcpw": "docker exec pw-cont xvfb-run npx playwright",
-    "description": "docker exec pw-cont xvfb-run npx playwright test -g",
+    "dcpw": "rm -r allure-test-results && docker exec pw-cont xvfb-run npx playwright",
+    "description": "rm -r allure-test-results && docker exec pw-cont xvfb-run npx playwright test -g",
     "allureserve": "allure generate allure-test-results -o allure-report --clean && allure open allure-report"
   },
   "keywords": [],
