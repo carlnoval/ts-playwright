@@ -8,13 +8,14 @@
   - Image - requires screenshots by running image tests from the official docker container matching with the playwirght version
     - Element
     - Page
-  - API Response (WIP)
-    - Need a way to pass keys and secrets to GHA
+  - API Test (Refactoring)
   - Component Testing (WIP)
 ## Reporting
 - T following reports are enabled for this project
   - Dot reports for quick logs
   - Allure reports with history for sharing via GitHub pages
+## Useful tips
+- Check package.json scripts for handy commands
 ## Run the test
 1. Preconditions to install
     - Node version...
