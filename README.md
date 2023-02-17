@@ -15,7 +15,7 @@
   - Dot reports for quick logs
   - Allure reports with history for sharing via GitHub pages
 ## Useful tips
-- Check package.json scripts for handy commands
+- Check package.json scripts for handy commands, ensure to read comments to be able to execute scripts properly
 ## Run the test
 1. Preconditions to install
     - Node version...
