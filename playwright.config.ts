@@ -35,7 +35,7 @@ const config: PlaywrightTestConfig = {
   /* For Allure, See https://www.npmjs.com/package/allure-playwright */
   reporter: [
     ['dot'],
-    ['allure-playwright', { detail: true, outputFolder: "allure-test-results", suiteTitle: true  }],
+    ['allure-playwright', { detail: true, outputFolder: "allure-test-results", suiteTitle: false  }],
     // enable 'html' report if needed
     // ['html', { open: 'never', outputFolder: 'playwright-report' }],
   ],
