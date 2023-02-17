@@ -47,8 +47,8 @@ testY.describe('API Tests', () => {
   });
 
   testY('invalid movie id - json & ', async ({ request, _tmdbV3API, _tmdbV3APIKey }) => {
-    const invalidID = '9999999999'
-    const requestURL = `${_tmdbV3API}movie/${invalidID}?api_key=${_tmdbV3APIKey}` ;
+    const invalidID = '9999999999';
+    const requestURL = `${_tmdbV3API}movie/${invalidID}?api_key=${_tmdbV3APIKey}`;
     const movie = await request.get(requestURL);
     expect(movie.status()).toBe(404);
     // The 'await movie.json()' does not need to be inside an array '[]' because 'toEqual' expects a json and 'movie.json()' resolves to a json
