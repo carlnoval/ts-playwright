@@ -1,14 +1,14 @@
 import { test } from '@playwright/test';
+import { TMDBMovieAPI } from '../api-objects/tmdb/tmdbMovie.api';
 
 type TestFixtures = {
-  _tmdbV3APIKey: string,
-  _tmdbV3API: string,
+  _tmdbMovieEndpoint: TMDBMovieAPI
 };
 
 export const testY = test.extend<TestFixtures>({
-  // Variable fixtures does not need 'use', functional fixtures needs it.
-  _tmdbV3APIKey: process.env.TMDB_API_V3_KEY || 'key_not_detected',
-  _tmdbV3API: 'https://api.themoviedb.org/3/',
+  _tmdbMovieEndpoint: async ({ request }, use) => {
+    await use(new TMDBMovieAPI(request));
+  }
 });
 
 export { expect } from '@playwright/test';
