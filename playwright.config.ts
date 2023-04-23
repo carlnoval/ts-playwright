@@ -1,11 +1,14 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-require('dotenv').config();
+// Read environment variables from file: https://github.com/motdotla/dotenv
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+// For dotenv troubleshooting: npx playwright test tests/github-env.test.ts --project=chromium
+// console.log(`@@@@@@@@@@@@@@@@@@@@[process.env.SECRET_NUM_GH_VAR = ${process.env.SECRET_NUM_GH_VAR}]`);
+// console.log(`@@@@@@@@@@@@@@@@@@@@[process.env.DUMMY_TOKEN_GH_SECRET = ${process.env.DUMMY_TOKEN_GH_SECRET}]`);
+// console.log(`@@@@@@@@@@@@@@@@@@@@[process.env.TMDB_API_V3_KEY_GH_SECRET = ${process.env.TMDB_API_V3_KEY_GH_SECRET}]`);
 
 /**
  * See https://playwright.dev/docs/test-configuration.
