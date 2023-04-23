@@ -21,9 +21,11 @@ jobs:
     # version must always match with docker image: https://hub.docker.com/_/microsoft-playwright
     runs-on: ubuntu-20.04
     env:
-      DUMMY_TOKEN: ${{ secrets.DUMMY_TOKEN_GH_SECRET }}
-      TMDB_API_V3_KEY: ${{ secrets.TMDB_API_V3_KEY_GH_SECRET }}
-      SECRET_NUM: ${{ vars.SECRET_NUM_GH_VAR }}
+      # declaring GitHub variables based from `.env` file
+      # left is GitHub var/secret, right is value from `.env` file
+      DUMMY_TOKEN_GH_SECRET: ${{ secrets.DUMMY_TOKEN_GH_SECRET }}
+      TMDB_API_V3_KEY_GH_SECRET: ${{ secrets.TMDB_API_V3_KEY_GH_SECRET }}
+      SECRET_NUM_GH_VAR: ${{ vars.SECRET_NUM_GH_VAR }}
 
     steps:
 
