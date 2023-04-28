@@ -13,6 +13,6 @@ export class TMDBBaseAPI {
   constructor(request: APIRequestContext) {
     this.request = request;
     this.tmdbAPIURL = "https://api.themoviedb.org/3";
-    this.tmdbV3APIKey = `?api_key=${process.env.TMDB_API_V3_KEY}`
+    this.tmdbV3APIKey = `?api_key=${process.env.TMDB_API_V3_KEY_GH_SECRET}`
   }
 }

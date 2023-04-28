@@ -8,10 +8,10 @@ import { expect, testX } from '../utils/fixtures/_basePage.fixture';
  */
 testX.describe('Github Environment Tests', () => {
   testX('Github Secrets', async () => {
-    expect(process.env.DUMMY_TOKEN === "The Dummy Token").toBeTruthy();
+    expect(process.env.DUMMY_TOKEN_GH_SECRET === "The Dummy Token").toBeTruthy();
   });
   
   testX('Github Variables', async () => {
-    expect(process.env.SECRET_NUM === "455").toBeTruthy();
+    expect(process.env.SECRET_NUM_GH_VAR === "455").toBeTruthy();
   });
 });
