@@ -66,13 +66,17 @@
      ```
      brew install allure
      ```
+     - Check Allure version.
+       ```
+       allure --version
+       ```
    - Install Docker Desktop and ensure that it is running.
    - Spin up the docker container, this is the same container that is used for GitHub Actions.
      ```
      docker compose up -d
      ```
 ## Run all the test
-- Ensure that the playwright docker container should be running. See `"scripts"` in [package.json](https://github.com/carlnoval/ts-playwright/blob/master/package.json) file for some handy commands to run tests.
+- Ensure that the Playwright docker container should be running. See `"scripts"` in [package.json](https://github.com/carlnoval/ts-playwright/blob/master/package.json) file for some handy commands to run tests.
 ```
 npm run dcpw test  
 ```
