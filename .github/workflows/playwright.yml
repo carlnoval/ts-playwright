@@ -4,8 +4,9 @@
 name: Run Playwright EtoE
 on:
   schedule:
-    # run test every Sun and Wed 9:45 AM JST
-    - cron: '45 0 * * 2,6'
+    # run test every 9:45AM JST during Sundays and Wednesdays
+    # reference: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    - cron: '45 0 * * 0,3'
   workflow_dispatch:
   push:
     branches: [ main, master ]
