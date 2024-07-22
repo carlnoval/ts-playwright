@@ -76,7 +76,7 @@
      docker compose up -d
      ```
 ## Run all the test
-- Ensure that the Playwright docker container should be running. See `"scripts"` in [package.json](https://github.com/carlnoval/ts-playwright/blob/master/package.json) file for some handy commands to run tests.
+- Ensure that the Playwright docker container is running. See `"scripts"` in [package.json](https://github.com/carlnoval/ts-playwright/blob/master/package.json) file for some handy commands to run tests.
 ```
 npm run dcpw test  
 ```
