@@ -13,14 +13,14 @@
 # - PW runs must start with:  xvfb-run
 # - Update snapshots with:    xvfb-run npx playwright test --update-snapshots
 
-version: "3.8"                # docker compose version
+version: "3.8"                                          # docker compose version
 services:
   playwright-container-service:
     container_name: pw-cont
-    image: mcr.microsoft.com/playwright:v1.30.0-focal
-    stdin_open: true          # -i
-    tty: true                 # -t
-    network_mode: host        # --network host
-    volumes:                  # Ensures that updates in local/container are in sync
-      - $PWD:/playwright/     # -v $(pwd):/volumedir/
-    working_dir: /playwright  # -w /volumedir/
+    image: mcr.microsoft.com/playwright:v1.45.1-jammy   # must match with Playwright version, based from https://playwright.dev/docs/docker#image-tags
+    stdin_open: true                                    # -i
+    tty: true                                           # -t
+    network_mode: host                                  # --network host
+    volumes:                                            # Ensures that updates in local/container are in sync
+      - $PWD:/playwright/                               # -v $(pwd):/volumedir/
+    working_dir: /playwright                            # -w /volumedir/

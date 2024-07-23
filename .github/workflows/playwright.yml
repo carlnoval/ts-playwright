@@ -22,8 +22,9 @@ permissions:
 jobs:
   run-playwright-tests:
     timeout-minutes: 60
-    # version must always match with docker image: https://hub.docker.com/_/microsoft-playwright
-    runs-on: ubuntu-20.04
+    # version must always match with docker image: https://playwright.dev/docs/docker#image-tags
+    # versions written like "Ubuntu 22.04 LTS (Jammy Jellyfish)" can be coded as `runs-on: ubuntu-22.04`
+    runs-on: ubuntu-22.04
     env:
       # declaring GitHub variables based from `.env` file
       # left is GitHub var/secret, right is value from `.env` file
