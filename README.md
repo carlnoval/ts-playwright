@@ -57,7 +57,8 @@
      npx playwright --version
      ```
      - If using VSCode, restart it so that the play button on the test scripts would appear.
-   - Install Playwright browsers. Note that browser version depends on which Playwright version is being used.
+   - Install Playwright browsers.
+     - Browser version depends on which Playwright version is being used.
      ```
      npx playwright install
      ```
