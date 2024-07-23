@@ -10,7 +10,6 @@
     "_comment4": "The `xvfb-run` command is required to run headed browsers in a linux container.",
     "_comment5": "-g is for grep, can only take one argument",
     "_comment6": "`-rm -r allure-test-results` is needed to always serve the freshest test via `allureserve`",
-
     "dcpw": "rm -r allure-test-results && docker exec pw-cont xvfb-run npx playwright",
     "description": "rm -r allure-test-results && docker exec pw-cont xvfb-run npx playwright test -g",
     "allureserve": "allure generate allure-test-results -o allure-report --clean && allure open allure-report"
@@ -19,7 +18,7 @@
   "author": "Carl N",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.30.0",
+    "@playwright/test": "^1.45.3",
     "allure-playwright": "^2.0.0-beta.26"
   },
   "dependencies": {
