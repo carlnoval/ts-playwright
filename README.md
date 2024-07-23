@@ -7,7 +7,7 @@
   - Text
   - Element / Page screenshot
     - Image testing requires initial screenshots by running image tests from the official docker container matching with the playwirght version.
-  - API Test
+  - API Response
   - Component Testing (TO DO)
 ## Reporting
 - The following reports are enabled for this project:
