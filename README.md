@@ -52,7 +52,7 @@
      ```
      npm install
      ```
-   - Check the Playwright version, should be `Version 1.30.0`.
+   - Check the Playwright version, should be `Version 1.45.3`.
      ```
      npx playwright --version
      ```

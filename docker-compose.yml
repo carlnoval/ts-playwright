@@ -1,5 +1,5 @@
-# Below command is from: https://playwright.dev/docs/test-snapshots
-# docker run --rm --network host -v $(pwd):/volumedir/ -w /volumedir/ -it mcr.microsoft.com/playwright:v1.30.0-focal /bin/bash 
+# This docker-compose file was originally converted from the following docker command which came from Playwright documentation (could no longer find exact page)
+# # docker run --rm --network host -v $(pwd):/volumedir/ -w /volumedir/ -it mcr.microsoft.com/playwright:v1.30.0-focal /bin/bash
 # The command got translated to this docker compose for convenience
 
 # Useful docker commands to use
