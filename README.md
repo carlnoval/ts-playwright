@@ -8,7 +8,6 @@
   - Element / Page screenshot
     - Image testing requires initial screenshots by running image tests from the official docker container matching with the playwirght version.
   - API Response
-  - Component Testing (TO DO)
 ## Reporting
 - The following reports are enabled for this project:
   - Playwright's dot reports for quick overview of results
