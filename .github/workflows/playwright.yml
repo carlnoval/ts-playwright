@@ -6,6 +6,7 @@ on:
   schedule:
     # run test every 9:45AM JST during Sundays and Wednesdays
     # reference: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    # note as per the link above: "The schedule event can be delayed during periods of high loads of GitHub Actions workflow runs."
     - cron: '45 0 * * 0,3'
   workflow_dispatch:
   push:
